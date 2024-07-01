@@ -15,6 +15,7 @@ MPPI-Generic relies on the following:
 * [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 * [CMake](https://cmake.org/) 3.10 or newer
 * git
+
 ### Prerequisite setup
 Follow the instructions to install CUDA provided [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
 
