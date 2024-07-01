@@ -1,3 +1,7 @@
+layout: page
+title: "Setup"
+permalink: /setup
+
 # Installation of MPPI-Generic
 On this page, we will try to give you a quick run-down on how to run MPPI-Generic on your own system.
 
