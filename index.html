@@ -21,12 +21,9 @@
   </head>
   <body>
     <!-- Setup variables -->
-    {% capture root_url %}
-    {{ site.url | append: site.baseurl }}
-    {% endcapture %}
+    {% capture root_url %}{{ site.url | append: site.baseurl }}{% endcapture %}
 
-    {% capture setup_ending %}{% link docs/setup.md %}
-    {% endcapture %}
+    {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
 
     {% capture performance_ending %}
     {% link performance.md %}
