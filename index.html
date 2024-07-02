@@ -22,22 +22,34 @@
     {% include head-custom.html %}
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <ul>
-            <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
-            <li class="title"><a href="{{ site.url | append: "/setup" }}">Setup</a></li>
-            <li class="title"><a href="{{ site.url }}">Home</a></li>
+    <!-- Setup variables -->
+    {% capture root_url %}
+    {{ site.url | append: site.baseurl }}
+    {% endcapture %}
 
-            <li class="title">HELP</li>
-            {% if site.show_downloads %}
-              <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
-              <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
-              <li class="title">DOWNLOADS</li>
-            {% endif %}
-          </ul>
-        </nav>
-      </div><!-- end header -->
+    {% capture setup_ending %}
+    {% link docs/setup.md %}
+    {% endcapture %}
+
+    {% capture performance_ending %}
+    {% link performance.md %}
+    {% endcapture %}
+    <div id="header">
+      <nav>
+        <ul>
+          <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
+
+          <li class="title"><a href="{{ root_url | append: setup_ending }}">Setup</a></li>
+          <li class="title"><a href="{{ root_url }}">Home</a></li>
+
+          {% if site.show_downloads %}
+            <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
+            <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
+            <li class="title">DOWNLOADS</li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div><!-- end header -->
 
     <div class="wrapper">
 
@@ -61,12 +73,6 @@
         <p>{{ site.url }}</p>
         <p>{{ site.baseurl }}</p>
         <p>{{ site.url | append: site.baseurl | append: "/setup" }}</p>
-        {% capture root_url %}
-        {{ site.url | append: site.baseurl }}
-        {% endcapture %}
-        {% capture link_url %}
-        {% link docs/setup.md %}
-        {% endcapture %}
         <p>{{ root_url }}</p>
         <p>{{ link_url }}</p>
 
