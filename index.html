@@ -27,9 +27,9 @@
           <ul>
             <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
 
-            {% if site.show_downloads %}    
+            <li class="title">HELP</li>
+            {% if site.show_downloads %}
               <li class="title">{{ '[Setup](docs/setup.md)' | markdownify }}</li>
-              <li class="title">HELP</li>
               <li class="title"><a href="{{ site.url }}">Home</a></li>
               <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
               <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
@@ -49,14 +49,15 @@
           <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
         </div>
-        
+
         {% for page in site.pages %}
-          <h1>{{ page.path }}</h1>
+          <!-- <h1>{{ page.path }}</h1> -->
           {% if page.title == "Main" %}
             <p>{{ page.content | markdownify }}</p>
+            {% break %}
           {% endif %}
         {% endfor %}
-        
+
         <p>{{ site.url }}</p>
         <p>{{ site.baseurl }}</p>
         <p>{{ site.url | append "/setup" }}</p>
