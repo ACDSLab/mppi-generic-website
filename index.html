@@ -26,7 +26,7 @@
         <nav>
           <ul>
             <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
-            <li class="title"><a href="{% link /docs/setup.md %}">Setup</a></li>
+            <li class="title">{{ '[Setup](docs/setup.md)' | markdownify }}</li>
             <li class="title"><a href="{% link /docs/main.md %}">Home</a></li>
             {% if site.show_downloads %}
               <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
@@ -47,14 +47,19 @@
           <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
         </div>
+        
+        {% capture main_page %}
+        {% include docs/main.md %}
+        {% endcapture %}
+        {{ main_page | markdownify }}
 
-        {% for page in site.pages %}
+<!--         {% for page in site.pages %}
           <h1>{{ page.path }}</h1>
           {% if page.title == "Main" %}
             <p>{{ page.content | markdownify }}</p>
-<!--             {% break %} -->
+             {% break %}
           {% endif %}
-        {% endfor %}
+        {% endfor %} -->
       </section>
 
     </div>
