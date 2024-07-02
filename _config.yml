@@ -1,5 +1,6 @@
-theme: jekyll-theme-midnight
-# gem "github-pages", group: :jekyll_plugins
+# theme: jekyll-theme-midnight
+gem "github-pages", group: :jekyll_plugins
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 # remote_theme: "jeffreytse/jekyll-theme-yat"
 title: MPPI-Generic
 description: A C++/CUDA templated library for MPPI
