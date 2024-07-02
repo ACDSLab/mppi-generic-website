@@ -50,6 +50,10 @@
         {{ content }}
         {% for page in site.pages %}
           <h2>{{ page.title }} - {{ staff_member.content }}</h2>
+          {% if page.title == "Main" %}
+            <p>We found the main?</p>
+            <p>{{ page.content | markdownify }}</p>
+          {% endif %}
 <!--           <p>{{ staff_member.content | markdownify }}</p> -->
         {% endfor %}
 <!--          <p>{{ site.content | markdownify }}</p> -->
