@@ -56,6 +56,10 @@
             <p>{{ page.content | markdownify }}</p>
           {% endif %}
         {% endfor %}
+        
+        <p>{{ site.url }}</p>
+        <p>{{ site.baseurl }}</p>
+        <p>{{ site.url | append "/setup" }}</p>
 
       </section>
 
