@@ -1,6 +1,6 @@
 ---
-title: Main
-permalink: /main
+# title: Main
+# permalink: /main
 ---
 # MPPI-Generic
 
