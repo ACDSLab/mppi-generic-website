@@ -1,6 +1,7 @@
 ---
 title: "Setup"
 permalink: /setup
+layout: page
 ---
 
 <!-- layout: page -->
