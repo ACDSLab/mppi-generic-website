@@ -1,6 +1,7 @@
 ---
 title: Main
 permalink: /main
+layout: page
 ---
 # MPPI-Generic
 

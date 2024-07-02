@@ -1,6 +1,5 @@
 ---
 title: Home
-permalink: /home
 layout: page
 ---
 # MPPI-Generic
