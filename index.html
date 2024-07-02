@@ -25,8 +25,9 @@
       <div id="header">
         <nav>
           <ul>
-<!--             <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li> -->
-            <li><a href="{% link docs/setup.md %}">Setup</a></li>
+            <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
+            <li class="title"><a href="{% link docs/setup.md %}">Setup</a></li>
+            <li class="title"><b href="{% link docs/main.md %}">Home</b></li>
             {% if site.show_downloads %}
               <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
               <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
@@ -47,17 +48,12 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
         </div>
 
-        {{ content }}
         {% for page in site.pages %}
-          <h2>{{ page.title }} - {{ staff_member.content }}</h2>
           {% if page.title == "Main" %}
-            <p>We found the main?</p>
             <p>{{ page.content | markdownify }}</p>
+            {% break %}
           {% endif %}
-<!--           <p>{{ staff_member.content | markdownify }}</p> -->
         {% endfor %}
-<!--          <p>{{ site.content | markdownify }}</p> -->
-
       </section>
 
     </div>
