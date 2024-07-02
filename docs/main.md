@@ -1,5 +1,6 @@
 ---
 title: Main
+permalink: /main
 ---
 # MPPI-Generic
 
@@ -7,7 +8,7 @@ MPPI-Generic is a C++/CUDA header-only library for conducting stochastic optimal
 
 ## Table of Contents
 
-* [Setup](docs/setup.md)
+* [Setup]({% link docs/setup.md %})
 
 
 ## Todos
