@@ -88,6 +88,33 @@ In order to address this, we calculate the max number of iterations over the thr
 So for example, if we had 500 as the desired number of timesteps and block *x* size of 128, we would do four iterations in our `for` loop to get the total horizon cost.
 These choices brings the time to do the cost calculation to much closer to that of a single timestep instead of having to wait for sequential iterations of the cost if it was paired with the Dynamics kernel.
 
+### Combined Kernel Description
+The Combined Kernel runs the Dynamics and Cost Function methods together in a single kernel.
+This works by getting the initial state and control samples, applying the Dynamics' `step()` to get the next state and output, and running that output through the Cost Functions' `computeCost()` to get the cost at that time.
+This basic interaction is then done in a `for` loop over the time horizon to get the the entire state trajectory as well as the cost of the entire sample.
+We parallelize this over three axes.
+First, the *x* and *z* dimensions of the block and grid are used to indicate which sample and system we are on as described above in the Split Kernel's Dynamics section.
+Finally, the *y* dimension is used to parallelize within the Dynamics and Cost Functions' methods.
+
+### Choosing between the Split and Combined Kernels
+There are some trade-offs between the two kernel options that can affect the overall computation time.
+By combining the Dynamics and Cost Function calculations together, we can keep the intermediate outputs in shared memory and don't need to save them out to global memory.
+However, we are forced to run the Cost Function sequentially in time.
+Splitting the Dynamics and Cost Function into separate kernels allows them each to use more shared memory for their internal calculations with the requirement of global memory usage to save out the sampled output trajectories.
+The Combined Kernel uses less global memory but requires more shared memory usage in a single kernel as it must contain both the Dynamics and Cost Functions' shared memory requiremens.
+As the number of samples grow, the number of reads and writes of outputs to global memory also grows.
+This can eventually take more time to do than the savings we get from running the Cost Function in parallel across time, even when using vectorized memory reads and writes.
+
+In order to address these trade-offs, we have implemented both kernel approaches in our library and automatically choose the most appropriate kernel at Controller construction.
+The automatic kernel selection is done by running both the combined and split kernels multiple times and then choosing the fastest option.
+As the combined kernel potentially uses more shared memory than the split kernel, we also check to see if the amount of shared memory used is below the GPU's shared memory hardware limit; if it is not, we default to the split kernel approach.
+We also allow the user to overwrite the automatic kernel selection through the use of the `setKernelChoice()` method.
+
+### Weight Transform and Update Rule Kernels
+Once the costs of each sample trajectory is calculated, we then bring these costs back to the CPU in order to find the baseline, ρ.
+The baseline is calculated by finding the minimum cost of all the sample trajectories; it is subtracted out during the exponentiation stage as it has empirically led to better optimization performance.
+When the number of samples is only in the thousands, we have found that the copy to the CPU to do the baseline search is faster than attempting to do the search on the GPU.
+
 ## References
 <a id="1">[1]</a>
 M. Harris, "How to Overlap Data Transfers in CUDA C/C++," Dec. 2012. [Online]. Available: [https://developer.nvidia.com/blog/how-overlap-data-transfers-cuda-cc/](https://developer.nvidia.com/blog/how-overlap-data-transfers-cuda-cc/)
