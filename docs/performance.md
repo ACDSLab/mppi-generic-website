@@ -2,6 +2,7 @@
 title: "Performance Implementation"
 permalink: /performance
 layout: page
+description: ""
 ---
 We now will go over some of the performance-specific implementation details we make use of in MPPI-Generic.
 First, we will give a brief introduction to GPU hardware and terminology followed by general GPU performance tricks.
