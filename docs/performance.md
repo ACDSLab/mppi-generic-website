@@ -2,7 +2,7 @@
 title: "Performance Implementation"
 permalink: /performance
 layout: page
-description: ""
+description: "Code improvements to achieve faster performance"
 ---
 We now will go over some of the performance-specific implementation details we make use of in MPPI-Generic.
 First, we will give a brief introduction to GPU hardware and terminology followed by general GPU performance tricks.
@@ -43,7 +43,7 @@ This means that it is possible to load up to four 32-bit floats in a single inst
 Using these concepts, we greatly reduce the number of calls to global memory and consequently increase the speed at which our computations can run.
 
 ![]({{ site.url }}{{ site.baseurl }}/docs/assets/performance/computeControlFlowChartCombinedAndSeparate.drawio.png)
-Fig. <a id="fig1">1</a>: *Diagram of the execution flow of `computeControl()`. The blue ellipses indicate variables, the green rectangles are GPU methods, and the orange rectangles are CPU methods. The selection in purple is a single GPU kernel when using the combined kernel and separated out when using split kernels. Most of the code is run on the GPU but we have found that some operations such as finding the baseline run faster on the CPU.*
+*Fig. <a id="fig1">1</a>: Diagram of the execution flow of `computeControl()`. The blue ellipses indicate variables, the green rectangles are GPU methods, and the orange rectangles are CPU methods. The selection in purple is a single GPU kernel when using the combined kernel and separated out when using split kernels. Most of the code is run on the GPU but we have found that some operations such as finding the baseline run faster on the CPU.*
 
 ## Library-Specific Performance Optimizations
 So far, we have discussed optimizations that can be done for any CUDA program.
@@ -77,7 +77,7 @@ switch(tdy) {
     break;
 }
 ```
-Listing <a id="code1">1</a>: *GPU code for the Unicycle Dynamics. This code parallelizes using the thread **y** dimension to do each state derivative calculation in a different thread*
+*Listing <a id="code1">1</a>: GPU code for the Unicycle Dynamics. This code parallelizes using the thread **y** dimension to do each state derivative calculation in a different thread*
 
 Now, we could have also run the Cost Function inside the previous kernel but we instead separate it out into its own kernel.
 The reason for that is that while the Dynamics must be sequential over time, the cost function does not need to be.
