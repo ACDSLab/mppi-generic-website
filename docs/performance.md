@@ -41,7 +41,7 @@ Looking at the GPU instruction set, CUDA provides instructions to read and write
 This means that it is possible to load up to four 32-bit floats in a single instruction.
 Using these concepts, we greatly reduce the number of calls to global memory and consequently increase the speed at which our computations can run.
 
-![](/docs/assets/performance/computeControlFlowChartCombinedAndSeparate.drawio.png)
+![]({{ site.url }}{{ site.baseurl }}/docs/assets/performance/computeControlFlowChartCombinedAndSeparate.drawio.png)
 Fig. <a id="fig1">1</a>: *Diagram of the execution flow of `computeControl()`. The blue ellipses indicate variables, the green rectangles are GPU methods, and the orange rectangles are CPU methods. The selection in purple is a single GPU kernel when using the combined kernel and separated out when using split kernels. Most of the code is run on the GPU but we have found that some operations such as finding the baseline run faster on the CPU.*
 
 ## Library-Specific Performance Optimizations
