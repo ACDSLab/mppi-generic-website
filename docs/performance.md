@@ -53,7 +53,7 @@ These same steps are also taken in Tube-MPPI and RMPPI though they have to be do
 
 One major performance consideration is how to parallelize the Dynamics and Cost Function calculations. We have found that, depending on the circumstances and the number of samples used in MPPI, different parallelization techniques make more sense. One way would be to run the Dynamics and Cost Function in a combined kernel on the GPU while another would be to run them in separate kernels. We discuss the description as well as the pros and cons of each parallelization technique below.
 
-### Split Kernel Description
+### Split Kernels
 We start by taking the initial state and control samples and run them through the Dynamics kernel.
 This kernel uses all three axes of thread parallelization for different components.
 First, the *x* dimension of the block and the grid are used to indicate which sample we are on as `threadIdx.x + blockDim.x * blockIdx.x`.
@@ -63,7 +63,7 @@ Finally, the *y* dimension is used to parallelize within the dynamics function
 As dynamics are rarely doing the same derivative computation for every state, this additional parallelization within the dynamics, shown in Lst. [1](#code1), can lead to better performance rather than sequentially going through each calculation.
 In the Dynamics kernel, we then run a `for` loop over time for each sample in which we get the current control sample, runs it through the Dynamic's `step()` method, and save out the resulting output to global memory.
 
-```c++
+```cuda
 int tdy = threadIdx.y;
 switch(tdy) {
   case S_INDEX(X):
@@ -88,7 +88,7 @@ In order to address this, we calculate the max number of iterations over the thr
 So for example, if we had 500 as the desired number of timesteps and block *x* size of 128, we would do four iterations in our `for` loop to get the total horizon cost.
 These choices brings the time to do the cost calculation to much closer to that of a single timestep instead of having to wait for sequential iterations of the cost if it was paired with the Dynamics kernel.
 
-### Combined Kernel Description
+### Combined Kernel
 The Combined Kernel runs the Dynamics and Cost Function methods together in a single kernel.
 This works by getting the initial state and control samples, applying the Dynamics' `step()` to get the next state and output, and running that output through the Cost Functions' `computeCost()` to get the cost at that time.
 This basic interaction is then done in a `for` loop over the time horizon to get the the entire state trajectory as well as the cost of the entire sample.

@@ -3,8 +3,17 @@
 
 @import "{{ site.theme }}";
 
+section {
+  max-width: 1050px;
+}
+
+.wrapper {
+  max-width: 1050px;
+}
+
 #header {
   nav {
+    max-width: 1050px;
     ul {
       li {
         font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -15,6 +24,7 @@
         line-height: 50px;
         text-shadow: 0px 1px 0px rgba(0,0,0,.2);
         font-size: 14px;
+
 
         &.link {
           float: right;
@@ -27,6 +37,25 @@
             background: #0000;
             box-shadow: none;
             font-size:  14px;
+            color: white;
+            &:hover {
+              color: #93bd20;
+              /* text-decoration: underline; */
+              border-bottom: 2px solid #93bd20;
+            }
+          }
+        }
+        &.link-left {
+          float: left;
+          margin-right: 0px;
+          font-size: 20px;
+          a {
+            border: none;
+            border-radius: none;
+            padding: 5px 5px;
+            background: #0000;
+            box-shadow: none;
+            font-size:  18px;
             color: white;
             &:hover {
               color: #93bd20;

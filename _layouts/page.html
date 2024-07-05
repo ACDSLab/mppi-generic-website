@@ -7,7 +7,24 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"
+            integrity="sha256-kbAFUDxdHwlYv01zraGjvjNZayxKtdoiJ38bDTFJtaQ="
+            crossorigin="anonymous">
+    </script>
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -21,15 +38,21 @@
     {% capture root_url %}{{ site.url | append: site.baseurl }}{% endcapture %}
 
     {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
-
+    {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
     {% capture performance_ending %}{% link docs/performance.md %}{% endcapture %}
     <div id="header">
       <nav>
         <ul>
+          {% comment %}
           <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
+          {% endcomment %}
+
+
+          <li class="link-left"><a href="{{ root_url }}">MPPI-Generic</a></li>
 
           <li class="link"><a href="{{ root_url | append: performance_ending }}">Performance</a></li>
           <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>
+          <li class="link"><a href="{{ root_url | append: mppi_ending }}">MPPI</a></li>
           <li class="link"><a href="{{ root_url }}">Home</a></li>
 
           {% if site.show_downloads %}

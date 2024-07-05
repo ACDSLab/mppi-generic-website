@@ -1,0 +1,14 @@
+<!-- Based on https://github.com/jekyll/jekyll/issues/7631 -->
+<pre id="read-{{ include.id }}" style="display:none;">
+    {{ include.code }}
+</pre>
+<div id="goal-{{ include.id }}"></div>
+<script type="text/javascript">
+    var code = document.getElementById("read-{{ include.id }}").textContent;
+    var parentEl = document.getElementById("goal-{{ include.id }}");
+    var options = {
+        commentDelimiter: '// ',
+        lineNumber: true
+    };
+    pseudocode.render(code, parentEl, options);
+</script>
