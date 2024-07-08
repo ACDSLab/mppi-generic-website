@@ -41,6 +41,7 @@
     {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
     {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
     {% capture performance_ending %}{% link docs/performance.md %}{% endcapture %}
+    {% capture benchmarks_ending %}{% link docs/benchmarks.md %}{% endcapture %}
     <div id="header">
       <nav>
         <ul>
@@ -51,6 +52,7 @@
 
           <li class="link-left"><a href="{{ root_url }}">MPPI-Generic</a></li>
 
+          <li class="link"><a href="{{ root_url | append: benchmarks_ending }}">Benchmarks</a></li>
           <li class="link"><a href="{{ root_url | append: performance_ending }}">Performance</a></li>
           <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>
           <li class="link"><a href="{{ root_url | append: mppi_ending }}">MPPI</a></li>
