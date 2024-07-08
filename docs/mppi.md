@@ -28,7 +28,7 @@ $$
 $$
 \begin{align}
 \vb{x}_{t+1} &= \vb{F}\PP{\vb{x}_t, \vb{u}_t} \\
-\vb{J}(X, U) &= \phi(\vb{x}_{T}) + \sum_{t = 0}^{T - 1}\vb{\ell}\PP{\vb{x}_t, \vb{u}_{t}}
+\vb{J}(X, U) &= \phi(\vb{x}_{T}) + \sum_{t = 0}^{T - 1}\vb{\ell}\PP{\vb{x}_t, \vb{u}_{t}} \label{eq:cost_function}
 \end{align}
 $$
 {% endif %}
@@ -59,7 +59,7 @@ Having this split between $\vb{x}_t$ and $\vb{y}_t$ is one that allows us to imp
 
 # MPPI Algorithm Overview
 
-Model Predictive Path Integral (MPPI) is a stochastic optimal control algorithm that minimizes the cost function above through the use of sampling.
+Model Predictive Path Integral (MPPI) is a stochastic optimal control algorithm that minimizes the cost function \eqref{eq:cost_function} the use of sampling.
 We start by sampling control trajectories, running each trajectory through the dynamics to create a corresponding state trajectory, and then evaluating each state and control trajectory through the cost function.
 Each trajectory's cost is then run through the exponential transform,
 
