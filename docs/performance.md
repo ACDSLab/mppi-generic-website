@@ -78,6 +78,7 @@ switch(tdy) {
 }
 ```
 *Listing <a id="code1">1</a>: GPU code for the Unicycle Dynamics. This code parallelizes using the thread **y** dimension to do each state derivative calculation in a different thread*
+{: class="codecaption"}
 
 Now, we could have also run the Cost Function inside the previous kernel but we instead separate it out into its own kernel.
 The reason for that is that while the Dynamics must be sequential over time, the cost function does not need to be.
@@ -123,7 +124,7 @@ M. Harris, "How to Overlap Data Transfers in CUDA C/C++," Dec. 2012. [Online]. A
 M. Harris, "Using Shared Memory in CUDA C/C++," Jan. 2013. [Online]. Available: [https://developer.nvidia.com/blog/using-shared-memory-cuda-cc/](https://developer.nvidia.com/blog/using-shared-memory-cuda-cc/)
 
 <a id="3">[3]</a>
-J. O. Coplien, “Curiously recurring template patterns, _C++ Report_, vol. 7, no. 2, pp. 24-27, 1995
+J. O. Coplien, *Curiously recurring template patterns*, _C++ Report_, vol. 7, no. 2, pp. 24-27, 1995
 
 <a id="4">[4]</a>
 J. Luitjens, "CUDA Pro Tip: Increase Performance with Vectorized Memory Access,"" Dec. 2013. [Online]. Available: [https://developer.nvidia.com/blog/cuda-pro-tip-increase-performance-with-vectorized-memory-access/](https://developer.nvidia.com/blog/cuda-pro-tip-increase-performance-with-vectorized-memory-access/)

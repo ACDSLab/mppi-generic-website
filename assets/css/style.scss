@@ -82,3 +82,10 @@ img + em {
     font-size: 13px;
   }
 }
+.codecaption {
+  font-size: 13px;
+  code {
+    font-size: 13px;
+  }
+  /* align: right; */
+}

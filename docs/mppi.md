@@ -149,7 +149,7 @@ Available: [https://ieeexplore.ieee.org/document/7487277/](https://ieeexplore.ie
 <a id="2">[2]</a>
 G. Williams, P. Drews, B. Goldfain, J. M. Rehg, and
 E. A. Theodorou, "Information-Theoretic Model Predictive Control: Theory and Applications to Autonomous
-Driving," _IEEE Transactions on Robotics_, vol. 34, no. 6, pp. 1603-1622, 201.
+Driving," *IEEE Transactions on Robotics*, vol. 34, no. 6, pp. 1603-1622, 2018.
 [Online]. Available:
 [https://ieeexplore.ieee.org/document/8558663](https://ieeexplore.ieee.org/document/8558663)
 
