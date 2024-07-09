@@ -298,6 +298,6 @@ torchrl contributors, "mppi.py - pytorch/rl," Meta, 2023.
 [Online]. Available: [https://github.com/pytorch/rl/blob/main/torchrl/modules/planners/mppi.py](https://github.com/pytorch/rl/blob/main/torchrl/modules/planners/mppi.py)
 
 <a id="8">[8]</a>
-Control," in _Proceedings of Robotics: Science and Systems,_ Freiburg im Breisgau, Germany, Jun. 2019.
 N. Wagener, C.-A. Cheng, J. Sacks, and B. Boots, "An Online Learning Approach to Model Predictive
+Control," in _Proceedings of Robotics: Science and Systems,_ Freiburg im Breisgau, Germany, Jun. 2019.
 [Online]. Available: [http://arxiv.org/abs/1902.08967](http://arxiv.org/abs/1902.08967)
