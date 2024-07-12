@@ -77,6 +77,7 @@ $$
 
 where $V^m$ is the $m$-th sampled control trajectory, $\vb{v}^m_t = \vb{u}_t + \epsilon^m_t$ is the control from the $m$-th sampled trajectory at time $t$ sampled around the previous optimal control, $\vb{u}_t$, with $\epsilon^m_t \sim \normal{0, \sigma^2}$.
 Sampling in the control space ensures that the trajectories are dynamically feasible and allows us to use non-differentiable dynamics and cost functions.
+In practice, we have found that finding the smallest cost sample, $\rho$, and subtracting it from all the costs before going through the exponential transform helps to robustify the optmization task.
 Pseudo code for the algorithm is shown below.
 
 {% include pseudocode.html id="mppi-pseudocode" code="
@@ -159,7 +160,7 @@ N. Wagener, C.-A. Cheng, J. Sacks, and B. Boots,
 "An Online Learning Approach to Model Predictive Control,"
 in _Proceedings of Robotics: Science and Systems,_
 Freiburg im Breisgau, Germany, Jun. 2019.
-[Online]. Available: [http://arxiv.org/abs/1902.08967](http://arxiv.org/abs/1902.08967)
+[Online]. Available: [https://www.roboticsproceedings.org/rss15/p33.pdf](https://www.roboticsproceedings.org/rss15/p33.pdf)
 
 <a id="5">[5]</a>
 G. Williams, B. Goldfain, P. Drews, K. Saigol, J. Rehg,
