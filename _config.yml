@@ -7,3 +7,4 @@ theme: jekyll-theme-midnight
 # remote_theme: "jeffreytse/jekyll-theme-yat"
 title: MPPI-Generic
 description: A C++/CUDA templated library for MPPI
+exclude: submodules/

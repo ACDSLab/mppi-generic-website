@@ -8,13 +8,7 @@ description: "Overview of the algorithm and its variants"
 
 Consider a general nonlinear system with discrete dynamics and cost function of the following form:
 
-$$
-\newcommand{\vb}[1]{ {\bf #1} }
-\newcommand{\PP}[1]{\left(#1\right)}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\expf}[1]{\exp\PP{#1}}
-\newcommand{\normal}[1]{\mathcal{N}\PP{#1}}
-$$
+{% include math_functions.md %}
 
 {% if use_output == true %}
 $$
