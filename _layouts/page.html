@@ -26,6 +26,7 @@
     <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
     <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+    <script src="/scripts/mode-switcher.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -46,11 +47,9 @@
     <div id="header">
       <nav>
         <ul>
-          {% comment %}
-          <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
-          {% endcomment %}
 
-
+          <li class="toggle-left"><a href="{{ page.url }}" onclick="modeSwitcher()" id="theme-toggle">☾ / ☀︎</a></li>
+          <li class="fork"><a href="https://github.com/ACDSLab/MPPI-Generic">View On GitHub</a></li>
           <li class="link-left"><a href="{{ root_url }}">MPPI-Generic</a></li>
 
           <li class="link"><a href="{{ root_url | append: benchmarks_ending }}">Benchmarks</a></li>
@@ -58,7 +57,7 @@
           <li class="link"><a href="{{ root_url | append: examples_ending }}">Getting Started</a></li>
           <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>
           <li class="link"><a href="{{ root_url | append: mppi_ending }}">MPPI</a></li>
-          <li class="link"><a href="{{ root_url }}">Home</a></li>
+          <!-- <li class="link"><a href="{{ root_url }}">Home</a></li> -->
 
           {% if site.show_downloads %}
             <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
@@ -83,7 +82,8 @@
         <div id="title">
           <hr>
           <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a>
+              and <a href="https://github.com/orderedlist">orderedlist</a></span>
         </div>
       </section>
     </div>
