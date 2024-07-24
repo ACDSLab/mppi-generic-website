@@ -105,7 +105,7 @@ We shall then call `updateState()` at a different fixed rate from the controller
 In Lst. [2](#code-2), we can see a simple implementation of a Plant.
 `SimpleCartpolePlant` instantiates a `CartpoleDynamics` variable upon creation, overwrites the required virtual methods from `BasePlant`, and sets up the dynamics update to occur within `pubControl()`.
 Looking at the constructor, we pass a shared pointer to a Controller, an integer representing the controller replanning rate, and the minimum timestep we want to adjust the control trajectory by when performing multiple optimal control calculations to the base Plant constructor, and then create our stand-in system dynamics.
-`pubControl()` is where we send the control to the system and so in this case, we create necessary extra variables and then pass the current state $\vb{x}_t$ and control $\vb{u}_t$ as `prev_state` and `u` respectively to the Dynamics' `step()` method to get the next state, $\vb{x}_{t+1}$, in the variable `current_state_`.
+`pubControl()` is where we send the control to the system and so in this case, we create necessary extra variables and then pass the current state $\vb{x}\_{t}$ and control $\vb{u}\_t$ as `prev_state` and `u` respectively to the Dynamics' `step()` method to get the next state, $\vb{x}\_{t+1}$, in the variable `current_state_`.
 We also update the current time to show that system has moved forward in time.
 Looking at this class, a potential issue arises as it is templated on the controller which in turn might not use `CartpoleDynamics` as its Dynamics class.
 This can be easily remedied by replacing any reference to `CarpoleDynamics` with `CONTROLLER_T::TEMPLATED_DYNAMICS` to make this plant work with the Dynamics used by the instantiated Controller.
