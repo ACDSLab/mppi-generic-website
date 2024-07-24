@@ -8,3 +8,4 @@ theme: jekyll-theme-midnight
 title: MPPI-Generic
 description: A C++/CUDA templated library for MPPI
 exclude: submodules/
+use_output: false

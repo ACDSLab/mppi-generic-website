@@ -150,7 +150,7 @@ First, we can look at the results on the most powerful system tested, using an I
 We see that as the number of samples increase, the ROS2 method which is CPU-bound increases in optimization times in a linear fashion.
 Every other method is on the GPU and we see little reason to use small sample sizes as they have the same computation time till we reach around $1024$ samples.
 We also see that as we hit $16,384$ samples, the AutoRally implementation starts to have lower optimization times than MPPI-Generic.
-We will see this trend continue in Fig. [2](#fig-1040ti).
+We will see this trend continue in Fig. [2](#fig-1050ti).
 
 <img src="{{ site.url }}{{ site.baseurl }}/docs/assets/mppi-comparisons/nvidia_geforce_gtx_1050_ti_results.png" width="100%">
 *Fig. <a id="fig-1050ti">2</a>: Optimization times for all MPPI implementations on a hardware system with a GTX 1050 Ti and an Intel 13900K over a variety of number of samples. It can be seen that MPPI-Generic and AutoRally on this older hardware does eventually start to scale linearly with the number of samples but does so at a much lower rate with our library compared to ROS2 or Pytorch.*
