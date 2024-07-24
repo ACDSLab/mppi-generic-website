@@ -12,8 +12,4 @@ MPPI-Generic is a C++/CUDA header-only library for conducting stochastic optimal
 
 ## Todos
 Things that still need to be done:
-* Create a page for API extensability
-* Create pages with example code
-* Create a page showing off the benchmarks compared to other implementations
-* Create a page talking about performance improvements we have made
 * Create a page for tips for using the Library
