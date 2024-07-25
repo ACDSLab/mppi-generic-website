@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
+  {% capture root_url %}{{ site.url | append: site.baseurl }}{% endcapture %}
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +27,7 @@
     <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
     <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
-    <script type="text/javascript" src="/scripts/mode-switcher.js"></script>
+    <script type="text/javascript" src="{{ root_url }}/scripts/mode-switcher.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -37,8 +38,6 @@
   </head>
   <body>
     <!-- Setup variables -->
-    {% capture root_url %}{{ site.url | append: site.baseurl }}{% endcapture %}
-
     {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
     {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
     {% capture performance_ending %}{% link docs/performance.md %}{% endcapture %}
