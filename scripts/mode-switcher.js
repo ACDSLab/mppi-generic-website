@@ -45,9 +45,9 @@ function modeSwitcher() {
 if (theme === "dark") {
   document.documentElement.setAttribute('data-theme', 'dark');
   sessionStorage.setItem('theme', 'dark');
-  document.getElementById("theme-toggle").innerHTML = "Light Mode";
+  // document.getElementById("theme-toggle").innerHTML = "Light Mode";
 } else if (theme === "light") {
   document.documentElement.setAttribute('data-theme', 'light');
   sessionStorage.setItem('theme', 'light');
-  document.getElementById("theme-toggle").innerHTML = "Dark Mode";
+  // document.getElementById("theme-toggle").innerHTML = "Dark Mode";
 }
