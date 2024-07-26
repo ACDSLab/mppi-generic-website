@@ -59,6 +59,7 @@ M. Gandhi, B. Vlahov, J. Gibson, G. Williams, and E. A. Theodorou,
 *IEEE Robotics and Automation Letters,* vol. 6, no. 2, pp. 1423–1430, Feb. 2021. [Online].
 Available: [https://arxiv.org/abs/2102.09027v1](https://arxiv.org/abs/2102.09027v1)
 
+{% comment %}
 ## Todos
 Things that still need to be done:
 - [ ] Create a page for API extensability
@@ -72,6 +73,7 @@ Things that still need to be done:
 - [x]  Figure out how to make the page wider
 - [ ] Add some common troubleshooting answers for installation page (nvidia architecture not found...)
 - [ ] Add CUDA incompatiblities (CuFFT being broken in some versions of CUDA)
+{% endcomment %}
 
 
 ## References
