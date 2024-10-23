@@ -145,7 +145,7 @@ The MPPI optimization times across all the hardware can be seen [here]({{ site.u
 It can be seen that the ROS2 CPU implementation grows linearly as the number of samples increase while GPU implementations grow more slowly.*
 
 Going over all of the collected data would take too much room for this paper so we shall instead try to pull out interesting highlights to discuss.
-Full results can be seen [here]({e site.url }}{{ site.baseurl }}{% link docs/assets/mppi_runtimes_table.pdf %}).
+Full results can be seen [here]({{ site.url }}{{ site.baseurl }}{% link docs/assets/mppi_runtimes_table.pdf %}).
 First, we can look at the results on the most powerful system tested, using an Intel i9-13900K and an NVIDIA RTX 4090 in Fig. [1](#fig-4090).
 We see that as the number of samples increase, the ROS2 method which is CPU-bound increases in optimization times in a linear fashion.
 Every other method is on the GPU and we see little reason to use small sample sizes as they have the same computation time till we reach around $1024$ samples.
