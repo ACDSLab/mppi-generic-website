@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  {% capture root_url %}{{ site.url | append: site.baseurl }}{% endcapture %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" type="image/png" href="{{ "/assets/images/favicon.png"  | absolute_url }}">
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                tags: 'ams',
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"
+            integrity="sha256-kbAFUDxdHwlYv01zraGjvjNZayxKtdoiJ38bDTFJtaQ="
+            crossorigin="anonymous">
+    </script>
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+    <script type="text/javascript" src="{{ root_url }}/scripts/mode-switcher.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <!-- Setup variables -->
+    {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
+    {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
+    {% capture performance_ending %}{% link docs/performance.md %}{% endcapture %}
+    {% capture benchmarks_ending %}{% link docs/benchmarks.md %}{% endcapture %}
+    {% capture examples_ending %}{% link examples.md %}{% endcapture %}
+    {% capture blog_ending %}{% link docs/blog.md %}{% endcapture %}
+    <div id="header">
+      <nav>
+        <ul>
+          <li class="toggle-left"><a href="{{ root_url | append: page.url }}" onclick="modeSwitcher()" id="theme-toggle">☾ / ☀︎</a></li>
+          <li class="fork"><a id="github-link" href="https://github.com/ACDSLab/MPPI-Generic" target="_blank" rel="noopener">GitHub Repository</a></li>
+          <li class="link-left"><a href="{{ root_url }}">MPPI-Generic</a></li>
+        </ul>
+        <div id="menu">
+          <ul id=menu-items>
+            <li class="link"><a href="{{ root_url | append: blog_ending }}">Blog</a></li>
+            <li class="link"><a href="{{ root_url | append: benchmarks_ending }}">Benchmarks</a></li>
+            <!-- <li class="link"><a href="{{ root_url | append: performance_ending }}">Performance</a></li> -->
+            <li class="link"><a href="{{ root_url | append: examples_ending }}">Getting Started</a></li>
+            <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>
+            <li class="link"><a href="{{ root_url | append: mppi_ending }}">MPPI</a></li>
+            <!-- <li class="link"><a href="{{ root_url }}">Home</a></li> -->
+
+            {% if site.show_downloads %}
+              <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
+              <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
+              <li class="title">DOWNLOADS</li>
+            {% endif %}
+          </ul>
+        </div>
+        {% include togglemenu.html %}
+      </nav>
+    </div><!-- end header -->
+
+    <div class="wrapper">
+
+      {{ content }}
+      <script src="/assets/js/hoverlink.js"></script>
+      <section>
+        <div id="title">
+          <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a>
+              and <a href="https://github.com/orderedlist">orderedlist</a></span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

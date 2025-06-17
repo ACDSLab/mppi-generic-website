@@ -25,7 +25,7 @@ that allow plug-and-play swapping with existing components.
 * [Comparisons to other popular implementations of MPPI](docs/benchmarks.md)
 
 ## Citation
-If you use this work, please cite the following paper:
+If you use this work, please cite the following [paper](https://arxiv.org/abs/2409.07563):
 ```BibTex
 @misc{vlahov2024mppi,
       title={MPPI-Generic: A CUDA Library for Stochastic Optimization},

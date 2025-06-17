@@ -137,6 +137,68 @@ ul {
   list-style-image: var(--list-item-img);
 }
 
+// Create Hoverlinks on sections
+.header-link {
+  margin-left: 0.5em;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+h1:hover .header-link,
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 1;
+}
+
+// Override Jekyll Theme removing the navbar when the screen is less than 480px
+@media screen and (max-width: 480px) {
+  body nav {
+    display: block !important;
+  }
+  body #header {
+    margin-top: 0px;
+  }
+}
+
+// Get configurable screen width from yaml config
+$screen-width: {{ site.screen-width }};
+
+// Use a toggle menu when the screen gets below a configurable width
+@media only screen and (max-width: #{$screen-width}) {
+  #togglemenu {
+    background: var(--navbar-bg-gif) var(--navbar-bg-color);
+    font-size: 20px;
+    text-align: right;
+    width: 100%;
+    color: var(--main-text-color);
+    line-height: 50px;
+  }
+  #togglemenu > span > span {
+    background: var(--main-text-color);
+  }
+  #header nav {
+    background: var(--navbar-bg-gif) var(--navbar-bg-color);
+  }
+
+  body.menuopen #header nav #menu-items {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    flex-direction: column-reverse;
+    li.link {
+      display: block;
+      float: none;
+      padding: 0.5rem 0;
+    }
+  }
+}
+
 #header {
   background: var(--navbar-bg-gif) var(--navbar-bg-color);
   border-bottom: 4px solid var(--navbar-bar-color);
