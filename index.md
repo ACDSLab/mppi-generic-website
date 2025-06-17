@@ -85,6 +85,16 @@ Things that still need to be done:
 - [ ] Add CUDA incompatiblities (CuFFT being broken in some versions of CUDA)
 {% endcomment %}
 
+## [Recent Blog Posts](docs/blog)
+<ul>
+  {% for post in site.posts limit:2 %}
+    <li>
+    <big><big><a href="{{ post.url }}">{{ post.title }}</a></big></big> -
+    <big><time datetime="{{ post.date | date: "%Y-%m-%d"}}">{{ post.date | date_to_long_string }}</time></big>:
+    {{ post.description }}
+    </li>
+  {% endfor %}
+</ul>
 
 ## References
 <a id="1">[1]</a>

@@ -7,7 +7,8 @@ theme: jekyll-theme-midnight
 # remote_theme: "jeffreytse/jekyll-theme-yat"
 title: MPPI-Generic
 description: A C++/CUDA templated library for MPPI
-exclude: submodules/
+exclude:
+ - submodules/
 use_output: false
 # Switch to a vertical menu when the screen width is below this size
 screen-width: 800px
