@@ -21,7 +21,7 @@ that allow plug-and-play swapping with existing components.
 * [The MPPI algorithm](docs/mppi.md)
 * [Installation](docs/setup.md)
 * [Getting started using the library](examples.md)
-* [How do we achieve high performance?]({% post_url 2024-10-23-performance-implementation %})
+* [How do we achieve high performance?]({{ site.url }}{{ site.baseurl }}{% post_url 2024-10-23-performance-implementation %})
 * [Comparisons to other popular implementations of MPPI](docs/benchmarks.md)
 
 ## Citation
@@ -89,7 +89,7 @@ Things that still need to be done:
 <ul>
   {% for post in site.posts limit:2 %}
     <li>
-    <big><big><a href="{{ post.url }}">{{ post.title }}</a></big></big> -
+    <big><big><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></big></big> -
     <big><time datetime="{{ post.date | date: "%Y-%m-%d"}}">{{ post.date | date_to_long_string }}</time></big>:
     {{ post.description }}
     </li>

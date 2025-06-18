@@ -159,7 +159,7 @@ When looking at older and lower-end NVIDIA hardware such as the GTX 1050 Ti, we 
 Only when the number of samples is at $128$ does the ROS2 implementation on an Intel 13900k match the performance of the AutoRally implementation on this older GPU. MPPI-Generic is still more performant at these lower number of samples and eventually we see it scales linearly as we get to thousands of samples.
 The TorchRL implementation also finally starts to show some GPU bottle-necking as we start to see optimization times increasing as we reach over $6144$ samples.
 We can also see that there is a moment where the MPPI-Generic library optimization time grows to be larger than the AutoRally implementation.
-That occurs when we switch from using the split kernels to the combined kernel discussed [here]({% post_url 2024-10-23-performance-implementation %}#split-kernels).
+That occurs when we switch from using the split kernels to the combined kernel discussed [here]({{ site.url }}{{ site.baseurl }}{% post_url 2024-10-23-performance-implementation %}#split-kernels).
 The AutoRally implementation uses a combined kernel as well but has fewer synchronization points on the GPU due to strictly requiring forward Euler integration for the dynamics.
 At the small hit to performance in the combined kernel, our library allows for many more features, such as multi-threaded cost functions, use of shared memory in the cost function, and implementation of more computationally-heavy integration methods such as Runge-Kutta or backward Euler integration.
 And while we see a hit to performance when using the combined kernel compared to AutoRally, we still see that the split kernel is faster for up to $2048$ samples.
