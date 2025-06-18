@@ -21,7 +21,7 @@ that allow plug-and-play swapping with existing components.
 * [The MPPI algorithm](docs/mppi.md)
 * [Installation](docs/setup.md)
 * [Getting started using the library](examples.md)
-* [How do we achieve high performance?](docs/performance.md)
+* [How do we achieve high performance?]({% post_url 2024-10-23-performance-implementation %})
 * [Comparisons to other popular implementations of MPPI](docs/benchmarks.md)
 
 ## Citation

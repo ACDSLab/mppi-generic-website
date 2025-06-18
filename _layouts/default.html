@@ -42,7 +42,6 @@
     <!-- Setup variables -->
     {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
     {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
-    {% capture performance_ending %}{% link docs/performance.md %}{% endcapture %}
     {% capture benchmarks_ending %}{% link docs/benchmarks.md %}{% endcapture %}
     {% capture examples_ending %}{% link examples.md %}{% endcapture %}
     {% capture blog_ending %}{% link docs/blog.md %}{% endcapture %}
@@ -57,11 +56,9 @@
           <ul id=menu-items>
             <li class="link"><a href="{{ root_url | append: blog_ending }}">Blog</a></li>
             <li class="link"><a href="{{ root_url | append: benchmarks_ending }}">Benchmarks</a></li>
-            <!-- <li class="link"><a href="{{ root_url | append: performance_ending }}">Performance</a></li> -->
             <li class="link"><a href="{{ root_url | append: examples_ending }}">Getting Started</a></li>
             <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>
             <li class="link"><a href="{{ root_url | append: mppi_ending }}">MPPI</a></li>
-            <!-- <li class="link"><a href="{{ root_url }}">Home</a></li> -->
 
             {% if site.show_downloads %}
               <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>

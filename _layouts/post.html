@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section>
+  <div id="title">
+    <h1>{{ page.title | default: site.github.repository_name }}</h1>
+    <p> {{ page.author }} -
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        Published {{ page.date | date: date_format }}
+        {%- if page.updated_date -%}
+        &nbsp| Updated {{ page.updated_date | date: date_format }}
+        {%- endif -%}
+    </time>
+    </p>
+    <hr>
+  </div>
+  {{ content }}
+</section>
+{% if page.tags.size > 0 %}
+  <div class="post-tags">
+    <h3>Tags</h3>
+    <ul>
+      {% for tag in page.tags %}
+        <li><a href="/tags/{{ tag | downcase | uri_escape }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
