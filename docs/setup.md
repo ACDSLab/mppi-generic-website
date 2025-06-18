@@ -18,6 +18,7 @@ MPPI-Generic relies on the following:
 * [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 * [CMake](https://cmake.org/) 3.10 or newer
 * git and git-lfs
+
 ### Unit tests requirements
 * [yaml-cpp](https://github.com/jbeder/yaml-cpp)
 * python-pil

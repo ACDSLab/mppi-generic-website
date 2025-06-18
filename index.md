@@ -13,7 +13,7 @@ MPPI-Generic is a C++/CUDA header-only library for conducting stochastic optimal
 * Dynamics and Cost Function-agnostic implementations of Model Predictive Path Integral (MPPI) [[1]](#1), Tube-MPPI [[2]](@2), and Robust MPPI (RMPPI) [[3]](#3) algorithms.
 * Largest variety of provided Dynamics and Cost Functions publicly available to use with MPPI, Tube-MPPI, and RMPPI
 * Different sampling distributions such as Gaussian noise, Colored noise [[4]](#4), NLN noise [[5]](#5), and Smooth-MPPI's sampling scheme [[6]](#6)
-* APIs to allow for researchers to write custom Dynamcis, Cost Functions, stochastic Controllers, and Sampling Distributions
+* APIs to allow for researchers to write custom Dynamics, Cost Functions, stochastic Controllers, and Sampling Distributions
 that allow plug-and-play swapping with existing components.
 
 ## Table of Contents
@@ -43,28 +43,28 @@ If you use this work, please cite the following [paper](https://arxiv.org/abs/24
 We have been developing MPPI-Generic for years to ensure that it is useful on real hardware in a variety of situations.
 Below are papers that have already started using the MPPI-Generic library.
 
-B. Vlahov, J. Gibson, D. D. Fan, P. Spieler, A.-a. Agha-mohammadi, and E. A. Theodorou,
+- B. Vlahov, J. Gibson, D. D. Fan, P. Spieler, A.-a. Agha-mohammadi, and E. A. Theodorou,
 "Low Frequency Sampling in Model Predictive Path Integral Control,"
 *IEEE Robotics and Automation Letters,* pp. 1–8, 2024. [Online].
 Available: [https://ieeexplore.ieee.org/document/10480553](https://ieeexplore.ieee.org/document/10480553)
 
-A. M. Patel, M. J. Bays, E. N. Evans, J. R. Eastridge, and E. A. Theodorou,
+- A. M. Patel, M. J. Bays, E. N. Evans, J. R. Eastridge, and E. A. Theodorou,
 "Model-Predictive Path-Integral Control of an Unmanned Surface Vessel with Wave
 Disturbance," in *OCEANS 2023 - MTS/IEEE U.S. Gulf Coast,* Sep. 2023, pp. 1–7. [Online].
 Available: [https://ieeexplore.ieee.org/document/10336978](https://ieeexplore.ieee.org/document/10336978)
 
-J. Gibson, B. Vlahov, D. Fan, P. Spieler, D. Pastor, A.-a. Agha-mohammadi, and E. A. Theodorou,
+- J. Gibson, B. Vlahov, D. Fan, P. Spieler, D. Pastor, A.-a. Agha-mohammadi, and E. A. Theodorou,
 "A Multi-step Dynamics Modeling Framework For Autonomous Driving In Multiple Environments,"
 in *2023 IEEE International Conference on Robotics and Automation (ICRA).*
 IEEE, May 2023, pp. 7959–7965. [Online].
 Available: [https://ieeexplore.ieee.org/document/10161330](https://ieeexplore.ieee.org/document/10161330)
 
-M. Gandhi, H. Almubarak, Y. Aoyama, and E. Theodorou,
+- M. Gandhi, H. Almubarak, Y. Aoyama, and E. Theodorou,
 "Safety in Augmented Importance Sampling: Performance Bounds for Robust MPPI,"
 Apr. 2022. [Online].
 Available: [http://arxiv.org/abs/2204.05963](http://arxiv.org/abs/2204.05963)
 
-M. Gandhi, B. Vlahov, J. Gibson, G. Williams, and E. A. Theodorou,
+- M. Gandhi, B. Vlahov, J. Gibson, G. Williams, and E. A. Theodorou,
 "Robust Model Predictive Path Integral Control: Analysis and Performance Guarantees,"
 *IEEE Robotics and Automation Letters,* vol. 6, no. 2, pp. 1423–1430, Feb. 2021. [Online].
 Available: [https://arxiv.org/abs/2102.09027v1](https://arxiv.org/abs/2102.09027v1)

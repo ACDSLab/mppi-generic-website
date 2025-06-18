@@ -137,6 +137,28 @@ ul {
   list-style-image: var(--list-item-img);
 }
 
+// Make line numbers more gray by making them transparent
+.gutter {
+  opacity: 0.55;
+}
+
+// Remove boxes around line number and code in a code block
+.rouge-table,
+.rouge-table td pre {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+// Push links down by navbar height when linked to
+h1, h2, h3, h4, h5, h6,
+.codecaption a[id],
+.tableright a[id],
+img +em a[id],
+[id^="mjx-eqn"] {
+  scroll-margin-top: 4rem;
+}
+
 // Create Hoverlinks on sections
 .header-link {
   margin-left: 0.5em;
@@ -145,6 +167,31 @@ ul {
   opacity: 0;
   font-size: 0.75em;
   transition: opacity 0.2s ease-in-out;
+}
+
+// Style the copy button on code blocks (only shows upon hover)
+.code-container {
+  position: relative;
+}
+
+.code-container .copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: var(--link-color);
+  color: var(--code-bg-color);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.code-container:hover .copy-button {
+  opacity: 1;
 }
 
 h1:hover .header-link,
@@ -303,6 +350,7 @@ img + em {
     font-size: 13px;
   }
 }
+
 .codecaption {
   font-size: 13px;
   code {
