@@ -44,7 +44,7 @@ Setting up a `git submodule` is rather straightforward.
 ```bash
 cd /path/to/project-root
 mkdir -p submodules
-git submodule add https://github.gatech.edu/ACDS/MPPI-Generic.git submodules/MPPI-Generic
+git submodule add https://github.com/ACDSLab/MPPI-Generic.git submodules/MPPI-Generic
 ```
 2. We now modify the root `CMakeLists.txt` of your project to add MPPI-Generic as a library your code can link to.
 Note that this is a header-only library written in CUDA, so your executables/libraries will need to be `*.cu` files
