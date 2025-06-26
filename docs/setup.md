@@ -78,15 +78,27 @@ make && make install
 ```
 You now have the MPPI-Generic library!
 
-### Build examples or unit tests
+### Build examples
 From the root directory of the MPPI-Generic repo:
 ```bash
 mkdir -p build && cd build
-cmake -DBUILD_EXAMPLES=ON .. # configure cmake to build examples
+cmake -DMPPI_BUILD_EXAMPLES=ON .. # configure cmake to build examples
 make
 cd examples
 ```
 In the `examples` folder, you will find multiple example programs using MPPI that should run such as `cartpole_example`.
 ```bash
 ./cartpole_example
+```
+
+### Build unit tests
+From the root directory of the MPPI-Generic repo:
+```bash
+mkdir -p build && cd build
+cmake -DMPPI_BUILD_TESTS=ON .. # configure cmake to build tests
+make
+```
+You can then run the unit tests with:
+```bash
+make test
 ```

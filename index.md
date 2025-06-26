@@ -28,7 +28,7 @@ that allow plug-and-play swapping with existing components.
 If you use this work, please cite the following [paper](https://arxiv.org/abs/2409.07563):
 ```BibTex
 @misc{vlahov2024mppi,
-      title={MPPI-Generic: A CUDA Library for Stochastic Optimization},
+      title={MPPI-Generic: A CUDA Library for Stochastic Trajectory Optimization},
       author={Bogdan Vlahov and Jason Gibson and Manan Gandhi and Evangelos A. Theodorou},
       year={2024},
       eprint={2409.07563},
