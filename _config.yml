@@ -1,6 +1,7 @@
 theme: jekyll-theme-midnight
 # gem "github-pages", group: :jekyll_plugins
-# plugins:
+plugins:
+  - jekyll-feed
 #   - jekyll-remote-theme
 # remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 # remote_theme: "pages-themes/midnight"

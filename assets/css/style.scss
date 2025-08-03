@@ -70,6 +70,13 @@
   color: var(--highlight-nc-color);
 }
 
+.rss-icon {
+  fill: var(--main-text-color);
+}
+
+a:hover .rss-icon {
+  fill: var(--navbar-link-hover-color);
+}
 
 pre {
   background: var(--code-bg-color);
