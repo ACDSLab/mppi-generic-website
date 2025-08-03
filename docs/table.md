@@ -22,7 +22,7 @@ A PDF of this data can be found [here]({{ site.url }}{{ site.baseurl }}{% link d
 </table>
 
 <script>
-  Papa.parse('/assets/data/results.csv', {
+  Papa.parse('{{ site.url }}{{ site.baseurl }}/assets/data/results.csv', {
     download: true,
     header: true,
     trimHeaders: true,
