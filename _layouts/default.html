@@ -7,7 +7,6 @@
 
     <link rel="shortcut icon" type="image/png" href="{{ "/assets/images/favicon.png"  | absolute_url }}">
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
 
@@ -30,6 +29,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
     <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
     <script type="text/javascript" src="{{ root_url }}/scripts/mode-switcher.js"></script>
+    {% if page.extra_head_content %}
+      {{ page.extra_head_content }}
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -43,6 +46,7 @@
     {% capture setup_ending %}{% link docs/setup.md %}{% endcapture %}
     {% capture mppi_ending %}{% link docs/mppi.md %}{% endcapture %}
     {% capture benchmarks_ending %}{% link docs/benchmarks.md %}{% endcapture %}
+    {% capture table_ending %}{% link docs/table.md %}{% endcapture %}
     {% capture examples_ending %}{% link examples.md %}{% endcapture %}
     {% capture blog_ending %}{% link docs/blog.md %}{% endcapture %}
     <div id="header">
@@ -55,6 +59,7 @@
         <div id="menu">
           <ul id=menu-items>
             <li class="link"><a href="{{ root_url | append: blog_ending }}">Blog</a></li>
+            <li class="link"><a href="{{ root_url | append: table_ending }}">Results</a></li>
             <li class="link"><a href="{{ root_url | append: benchmarks_ending }}">Benchmarks</a></li>
             <li class="link"><a href="{{ root_url | append: examples_ending }}">Getting Started</a></li>
             <li class="link"><a href="{{ root_url | append: setup_ending }}">Installation</a></li>

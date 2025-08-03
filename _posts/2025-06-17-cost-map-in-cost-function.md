@@ -8,7 +8,10 @@ tags:
 description: "A simple how-to for integrating maps into your cost function"
 author: Bogdan Vlahov
 ---
-{% include math_functions.md %}
+One common Cost Function component is having a map-based cost.
+In our library, we have included a helper class to allow for fast querying on the GPU and equivalent querying on the CPU.
+In this post, I will dicuss how to use our TextureHelper API to add maps to your own custom Cost Function.
+This post is based on this following [Github Issue](https://github.com/ACDSLab/MPPI-Generic/issues/8) we received and should hopefully go into more depth for curious readers.
 
 {% capture map-cost-def %}
 {% include code/map_cost/map_cost.cuh %}
@@ -19,11 +22,6 @@ author: Bogdan Vlahov
 {% include code/map_cost/map_cost.cu %}
 {% endcapture %}
 {% assign map-src-snippets = map-cost-src | newline_to_br | strip_newlines | split: '<br />' %}
-
-One common Cost Function component is having a map-based cost.
-In our library, we have included a helper class to allow for fast querying on the GPU and equivalent querying on the CPU.
-In this post, I will dicuss how to use our TextureHelper API to add maps to your own custom Cost Function.
-This post is based on this following [Github Issue](https://github.com/ACDSLab/MPPI-Generic/issues/8) we received and should hopefully go into more depth for curious readers.
 
 ## Creating the Cost Function
 Let us first set up a minimal example.

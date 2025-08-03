@@ -11,4 +11,4 @@ exclude:
  - submodules/
 use_output: false
 # Switch to a vertical menu when the screen width is below this size
-screen-width: 800px
+screen-width: 875px

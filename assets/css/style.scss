@@ -87,6 +87,15 @@ th {
   color: var(--table-header-color);
 }
 
+div.dtcc-dropdown button.dtcc-button,
+table.dataTable span.dtcc span.dtcc-button-icon svg {
+  color: var(--main-text-color);
+}
+
+div.dtcc-dropdown {
+  background: var(--navbar-bg-color);
+}
+
 section {
   max-width: 1050px;
 }
